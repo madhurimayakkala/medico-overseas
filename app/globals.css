@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1f2937;
+
+  /* Medico Overseas brand palette */
+  --brand-navy: #1f3864;
+  --brand-navy-dark: #14264a;
+  --brand-navy-light: #eef2f8;
+  --brand-coral: #e15b3f;
+  --brand-coral-dark: #c8492f;
+  --brand-coral-light: #fdeee9;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-navy-dark: var(--brand-navy-dark);
+  --color-brand-navy-light: var(--brand-navy-light);
+  --color-brand-coral: var(--brand-coral);
+  --color-brand-coral-dark: var(--brand-coral-dark);
+  --color-brand-coral-light: var(--brand-coral-light);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Hide real content behind the intro overlay until intro finishes or was
+   already seen this session. The "intro-active" class is added by a
+   blocking inline script in <head>, before first paint, so there is no
+   flash of page content before the intro shows. */
+html.intro-active body {
+  overflow: hidden;
+}
+
+html.intro-active #site-content {
+  visibility: hidden;
+}
