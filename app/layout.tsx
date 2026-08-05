@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ViewTransitions } from "next-view-transitions";
 import "./globals.css";
 
 import { Navbar } from "@/components/layout/Navbar";
@@ -36,14 +37,16 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
-        <IntroWrapper>
-          <div id="site-content" className="flex min-h-full flex-col">
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-            <WhatsAppButton />
-          </div>
-        </IntroWrapper>
+        <ViewTransitions>
+          <IntroWrapper>
+            <div id="site-content" className="flex min-h-full flex-col">
+              <Navbar />
+              <main className="flex-1">{children}</main>
+              <Footer />
+              <WhatsAppButton />
+            </div>
+          </IntroWrapper>
+        </ViewTransitions>
       </body>
     </html>
   );

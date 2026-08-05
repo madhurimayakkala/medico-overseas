@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { leadFormSchema } from "@/lib/validations";
 import { SITE_CONTACT } from "@/lib/metadata";
+import { appendLeadToSheet } from "@/lib/sheets";
 
 export async function POST(request: NextRequest) {
   try {
@@ -27,6 +28,10 @@ export async function POST(request: NextRequest) {
       });
     }
 
+    // Save to Google Sheet (non-fatal if it fails)
+    await appendLeadToSheet(data);
+
+    // Send email notification via Resend
     const resendApiKey = process.env.RESEND_API_KEY;
 
     if (resendApiKey) {

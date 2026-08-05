@@ -11,7 +11,9 @@ export const blogPosts: BlogPost[] = [
 Russia and Georgia remain the most popular choices due to their affordable fees and century-old medical universities. Kyrgyzstan and Uzbekistan offer some of the lowest overall costs, making them ideal for budget-conscious students. Armenia stands out for its academic legacy, while Vietnam is an emerging option with modern hospital infrastructure.
 
 Before finalizing a country, students should verify the university's NMC approval status, check the FMGE/NExT pass rate of past graduates, and factor in the total cost of the 6-year program including living expenses. Speaking with current students or alumni can also provide valuable first-hand insight into campus life and academic quality.`,
-    coverImage: "/images/blogs/best-countries-mbbs.jpg",
+    // University lecture hall — students in a medical classroom setting
+    coverImage:
+      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&h=675&fit=crop&q=80",
     category: "Country Guide",
     author: "Medico Overseas Team",
     publishedAt: "2026-07-15",
@@ -30,7 +32,9 @@ Before finalizing a country, students should verify the university's NMC approva
 Start early. Ideally, FMGE preparation should begin during the clinical years of MBBS rather than after graduation. Focus on high-yield subjects like Pharmacology, Pathology, and Community Medicine, which carry significant weightage in the exam pattern.
 
 Practicing with previous years' question papers helps identify recurring themes and question styles. Joining a structured coaching program or study group can also provide accountability and access to updated study material. Time management during the actual exam is equally important, so regular timed mock tests should be part of the preparation routine in the final months before the exam.`,
-    coverImage: "/images/blogs/fmge-preparation.jpg",
+    // Medical student studying with books and notes
+    coverImage:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=675&fit=crop&q=80",
     category: "Exam Guide",
     author: "Medico Overseas Team",
     publishedAt: "2026-07-20",
@@ -49,7 +53,9 @@ Practicing with previous years' question papers helps identify recurring themes 
 After receiving an official invitation letter from the university, students submit their visa application along with supporting documents such as academic transcripts, passport copies, medical fitness certificates, and proof of fee payment. Processing times typically range from two to four weeks depending on the country and embassy workload.
 
 Common reasons for visa delays include incomplete documentation, discrepancies between submitted records, or missing medical certificates. Working with an experienced consultancy can help avoid these pitfalls by ensuring every document is verified before submission. Students should also begin the visa process well in advance of the intake date to account for any unexpected delays.`,
-    coverImage: "/images/blogs/student-visa-guide.jpg",
+    // Passport and travel documents on a desk
+    coverImage:
+      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=675&fit=crop&q=80",
     category: "Visa & Documentation",
     author: "Medico Overseas Team",
     publishedAt: "2026-07-25",

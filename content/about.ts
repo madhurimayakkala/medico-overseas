@@ -64,25 +64,29 @@ export const aboutContent = {
       name: "Dr. Ramesh Chowdary",
       role: "Founder & Chief Counsellor",
       bio: "15+ years guiding Indian students through MBBS admissions abroad, with a background in medical education consulting.",
-      photo: "/images/team/founder.jpg",
+      // Professional Indian male — doctor / counsellor look
+      photo: "https://randomuser.me/api/portraits/men/75.jpg",
     },
     {
       name: "Priyanka Nair",
       role: "Head of Admissions",
       bio: "Specializes in university selection and documentation, having personally guided over 500 successful admissions.",
-      photo: "/images/team/admissions-head.jpg",
+      // Professional Indian female
+      photo: "https://randomuser.me/api/portraits/women/44.jpg",
     },
     {
       name: "Arjun Mehta",
       role: "Visa & Immigration Lead",
       bio: "Manages end-to-end visa processing across all 6 destination countries with a near-perfect approval track record.",
-      photo: "/images/team/visa-lead.jpg",
+      // Professional male, approachable
+      photo: "https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
       name: "Dr. Sneha Kulkarni",
       role: "FMGE/NExT Exam Mentor",
       bio: "A licensed physician who cleared FMGE herself, now mentoring graduates through their licensing exam preparation.",
-      photo: "/images/team/exam-mentor.jpg",
+      // Professional Indian female — doctor look
+      photo: "https://randomuser.me/api/portraits/women/68.jpg",
     },
   ] as TeamMember[],
 };
