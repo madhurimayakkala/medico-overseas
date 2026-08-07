@@ -33,15 +33,15 @@ export const testimonials: Testimonial[] = [
     image: "/images/testimonials/priya-nair.jpg",
   },
   {
-    id: "t3",
-    studentName: "Rahul Verma",
-    country: "Philippines",
-    university: "Davao Medical School Foundation",
-    year: "2021",
-    quote:
-      "The English-medium instruction and US-pattern curriculum made the transition easy. My counsellor followed up regularly even after I'd already left India.",
-    rating: 4,
-    image: "/images/testimonials/rahul-verma.jpg",
+  id: "t3",
+  studentName: "Rahul Verma",
+  country: "Uzbekistan",
+  university: "Tashkent Medical Academy",
+  year: "2021",
+  quote:
+    "The English-medium instruction and modern campus made the transition easy. My counsellor followed up regularly even after I'd already left India.",
+  rating: 4,
+  image: "/images/testimonials/rahul-verma.jpg",
   },
   {
     id: "t4",

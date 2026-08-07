@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ViewTransitions } from "next-view-transitions";
+import { Plus_Jakarta_Sans, Baloo_2 } from "next/font/google";
 import "./globals.css";
 
 import { Navbar } from "@/components/layout/Navbar";
@@ -8,6 +8,18 @@ import { WhatsAppButton } from "@/components/shared/WhatsAppButton";
 import IntroWrapper from "@/components/intro/IntroWrapper";
 
 import { siteMetadata, siteViewport } from "@/lib/metadata";
+
+const bodyFont = Plus_Jakarta_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const headingFont = Baloo_2({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = siteMetadata;
 export const viewport = siteViewport;
@@ -18,12 +30,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${bodyFont.variable} ${headingFont.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
       <head>
-        {/* Runs before first paint. Adds "intro-active" to <html> if the
-            intro hasn't been seen this session yet, which the CSS rule in
-            globals.css uses to hide #site-content until the intro
-            finishes — this is what prevents a flash of page content. */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -35,18 +47,23 @@ export default function RootLayout({
             `,
           }}
         />
+        {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
+          <script
+            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+            async
+            defer
+          />
+        )}
       </head>
       <body className="min-h-full flex flex-col">
-        <ViewTransitions>
-          <IntroWrapper>
-            <div id="site-content" className="flex min-h-full flex-col">
-              <Navbar />
-              <main className="flex-1">{children}</main>
-              <Footer />
-              <WhatsAppButton />
-            </div>
-          </IntroWrapper>
-        </ViewTransitions>
+        <IntroWrapper>
+          <div id="site-content" className="flex min-h-full flex-col">
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <WhatsAppButton />
+          </div>
+        </IntroWrapper>
       </body>
     </html>
   );

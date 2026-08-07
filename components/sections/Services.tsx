@@ -8,7 +8,6 @@ import {
   LucideIcon,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { services } from "@/content/services";
 
@@ -23,26 +22,51 @@ const iconMap: Record<string, LucideIcon> = {
 
 export function Services() {
   return (
-    <section className="bg-slate-50 py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-20 sm:py-28">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
+          align="left"
           eyebrow="What We Offer"
           title="End-to-End MBBS Abroad Support"
           description="From your first counselling call to your final year exam prep, we're with you at every step."
+          className="mx-0"
         />
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="divide-y divide-slate-100 border-t border-slate-100">
           {services.map((service, index) => {
             const Icon = iconMap[service.icon] ?? MessageCircle;
+            const isEven = index % 2 === 0;
             return (
-              <AnimatedSection key={service.title} delay={index * 0.06}>
-                <Card hover className="h-full bg-white">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-coral-light text-brand-coral">
-                    <Icon className="h-6 w-6" />
+              <AnimatedSection key={service.title} delay={index * 0.05}>
+                <div
+                  className={`flex flex-col gap-4 py-8 sm:flex-row sm:items-center sm:gap-8 ${
+                    isEven ? "" : "sm:flex-row-reverse sm:text-right"
+                  }`}
+                >
+                  <span
+                    className={`font-heading shrink-0 text-6xl font-bold leading-none text-brand-navy-light sm:text-7xl`}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <div
+                    className={`flex flex-1 items-start gap-4 ${
+                      isEven ? "" : "sm:flex-row-reverse"
+                    }`}
+                  >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-coral-light text-brand-coral">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-slate-900">
+                        {service.title}
+                      </h3>
+                      <p className="mt-1 max-w-md text-sm text-slate-600">
+                        {service.description}
+                      </p>
+                    </div>
                   </div>
-                  <CardTitle className="mb-2">{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
-                </Card>
+                </div>
               </AnimatedSection>
             );
           })}

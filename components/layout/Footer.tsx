@@ -141,7 +141,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-slate-400 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-slate-400 sm:flex-row sm:pb-6">
           <p>© {year} {siteConfig.name}. All Rights Reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
